@@ -1,0 +1,13 @@
+@startuml
+title FullCycle
+participant CoinAcceptor
+participant EventFsm
+participant Turnstyle
+participant Indictor
+CoinAcceptor -> EventFsm : coin_deposited
+EventFsm -> Turnstyle : unlock
+EventFsm -> Indicator : green
+TurnStyle -> EventFsm : turned_once
+EventFsm -> Turnstyle : lock
+EventFsm -> Indicator : red
+@enduml

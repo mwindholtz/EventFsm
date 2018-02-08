@@ -1,0 +1,6 @@
+@startuml
+scale 350 width
+[*] --> locked
+locked --> unlocked : coin_deposited
+unlocked --> locked : turned_once
+@enduml
