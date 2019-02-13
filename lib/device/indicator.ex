@@ -30,7 +30,6 @@ defmodule EventFsm.Device.Indicator do
   end
 
   def handle_cast({:event, _light_color}, indicator = %Indicator{}) do
-    indicator
     {:noreply, indicator}
   end
 

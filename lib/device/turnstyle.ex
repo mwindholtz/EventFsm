@@ -2,7 +2,6 @@ defmodule EventFsm.Device.Turnstyle do
   use GenServer
 
   alias EventFsm.Dispatcher
-  alias EventFsm.Evt
 
   defstruct dispatcher: Dispatcher
 
@@ -30,7 +29,6 @@ defmodule EventFsm.Device.Turnstyle do
   end
 
   def handle_cast({:event, :coin}, turnstyle = %Turnstyle{}) do
-    turnstyle
     {:noreply, turnstyle}
   end
 end

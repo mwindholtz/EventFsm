@@ -37,10 +37,6 @@ defmodule EventFsm.Resolver do
     %{rez | data: data}
   end
 
-  defp dispatcher(%Resolver{config: %{dispatcher: dispatcher}}) do
-    dispatcher
-  end
-
   def replace_dispatcher(rez = %Resolver{}, dispatcher) do
     put_in(rez.config[:dispatcher], dispatcher)
   end

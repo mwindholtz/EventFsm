@@ -1,11 +1,9 @@
 mix test.watch
 ==============
 
-
 [![Build Status](https://travis-ci.org/lpil/mix-test.watch.svg?branch=master)](https://travis-ci.org/lpil/mix-test.watch)
 [![Hex version](https://img.shields.io/hexpm/v/mix_test_watch.svg "Hex version")](https://hex.pm/packages/mix_test_watch)
 [![Hex downloads](https://img.shields.io/hexpm/dt/mix_test_watch.svg "Hex downloads")](https://hex.pm/packages/mix_test_watch)
-[![Deps Status](https://beta.hexfaktor.org/badge/all/github/lpil/mix-test.watch.svg)](https://beta.hexfaktor.org/github/lpil/mix-test.watch)
 
 Automatically run your Elixir project's tests each time you save a file.
 Because TDD is awesome.
@@ -18,14 +16,14 @@ Add it to your dependencies:
 ```elixir
 # mix.exs (Elixir 1.4)
 def deps do
-  [{:mix_test_watch, "~> 0.3", only: :dev, runtime: false}]  
+  [{:mix_test_watch, "~> 0.8", only: :dev, runtime: false}]
 end
 ```
 
 ```elixir
 # mix.exs (Elixir 1.3 and earlier)
 def deps do
-  [{:mix_test_watch, "~> 0.3", only: :dev}]
+  [{:mix_test_watch, "~> 0.8", only: :dev}]
 end
 ```
 
@@ -116,6 +114,8 @@ if Mix.env == :dev do
               ~r/useless_.*\.exs/]
 end
 ```
+
+The default is `exclude: [~r/\.#/, ~r{priv/repo/migrations}]`.
 
 ## Compatibility Notes
 

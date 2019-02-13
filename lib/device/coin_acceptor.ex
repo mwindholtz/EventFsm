@@ -2,7 +2,6 @@ defmodule EventFsm.Device.CoinAcceptor do
   use GenServer
 
   alias EventFsm.Dispatcher
-  alias EventFsm.Evt
 
   defstruct dispatcher: Dispatcher
 

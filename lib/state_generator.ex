@@ -1,6 +1,7 @@
 defmodule EventFsm.StateGenerator do
-  alias EventFsm.Evt 
   alias EventFsm.Action
+
+  @unimplemented {:no_change, []}
 
   def transition_rules() do
     %{
@@ -18,7 +19,7 @@ defmodule EventFsm.StateGenerator do
     base_dir = "gen"
     File.mkdir_p(base_dir)
     file_name = "States"
-    rule_list = Map.to_list(rules) 
+    rule_list = Map.to_list(rules)
     io_list = stream_gen(rule_list, file_name)
     file = File.open!("gen/#{file_name}.txt", [:utf8, :write])
     write(file, io_list)
@@ -43,7 +44,7 @@ defmodule EventFsm.StateGenerator do
     _io_list = gen_uml_footer(io_list)
   end
 
-  def gen_uml_header(io_list, image_name) do
+  def gen_uml_header(io_list, _image_name) do
     io_list ++
       [
         "@startuml",
@@ -61,12 +62,12 @@ defmodule EventFsm.StateGenerator do
   end
 
   # Skip for now
-  def gen_uml_step(io_list, {{:any, _ }, _}) do 
-    io_list 
+  def gen_uml_step(io_list, {{:any, _}, _}) do
+    io_list
   end
-  
+
   # REPORT
-  def gen_uml_step(io_list, param) do
-    raise inspect param  
+  def gen_uml_step(_io_list, param) do
+    raise inspect(param)
   end
 end

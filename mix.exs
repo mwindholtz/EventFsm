@@ -20,6 +20,8 @@ defmodule EventFsm.MixProject do
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
-    []
+    [
+      {:mix_test_watch, "~> 0.9.0", only: :dev, runtime: false}
+    ]
   end
 end
